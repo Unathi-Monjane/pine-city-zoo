@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pine City Zoo Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Give Us Your Feedback</h1>
+    <nav>
+      <a href="Pine City Zoo.html">Home</a>
+      <a href="animals.html">Animals</a>
+      <a href="places.html">Places</a>
+      <a href="map.html">Map</a>
+      <a href="weather.html">Weather</a>
+      <a href="feedback.html" class="active">Feedback</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="feedback-section">
+      <h2>We Would Love to Hear From You!</h2>
+      <form action="#" method="post" class="feedback-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+        <label for="visit-date">Date of Visit:</label>
+        <input type="date" id="visit-date" name="visit-date" required />
+
+        <label for="rating">Rate your experience:</label>
+        <select id="rating" name="rating" required>
+          <option value="">--Select--</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Good</option>
+          <option value="2">Fair</option>
+          <option value="1">Poor</option>
+        </select>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Write your comments here..."></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+
+ <video autoplay muted loop id="bg-video">
+  <source src="videos/giraffe-video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+
+  <footer>
+    <p>&copy; 2025 Pine City Zoo. All rights reserved.</p>
+  </footer>
+</body>
+</html>

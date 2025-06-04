@@ -1,0 +1,204 @@
+/* General resets and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e0f2f1; /* light teal */
+  color: #2e3a32; /* dark forest green */
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #00796b; /* deep teal */
+  color: #e0f2f1;
+  padding: 1rem 2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #b2dfdb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #004d40;
+  color: #fff;
+}
+
+nav a.active {
+  background-color: #004d40;
+  color: #fff;
+  cursor: default;
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid for animals and places */
+.animals-grid, .places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.animals-grid article, .places-grid article {
+  background: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animals-grid article:hover, .places-grid article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.animals-grid img, .places-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.animals-grid h2, .places-grid h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #004d40;
+}
+
+.animals-grid p, .places-grid p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Map styling */
+.map-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #ffffffcc;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.responsive-map {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.responsive-map:hover {
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  background-color: #004d40;
+  color: #b2dfdb;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .animals-grid img, .places-grid img {
+    height: 140px;
+  }
+}
+
+/* Container for the video background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* behind all content */
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* cover entire area */
+  filter: brightness(0.35) contrast(0.8); /* darken and soften video */
+}
+
+/* Optional overlay for extra darkening */
+.video-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background-color: rgba(0,0,0,0.35); /* semi-transparent black */
+  z-index: -1;
+}
+
+/* Content wrapper to be above video */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.15; /* Subtle background effect */
+  filter: blur(1px);
+}
